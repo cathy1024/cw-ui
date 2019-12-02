@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdn.bootcss.com/vue/2.6.10/vue.min.js"></script>
+    <script src="https://cdn.bootcss.com/element-ui/2.10.1/index.js"></script>
+
+    <script src="data.js"></script>
+
+    <!-- 引入cw-input-select组件 -->
+    <link rel="stylesheet" href="component/cw-input-select.css">
+    <script src="component/cw-input-select.js"></script>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+        }
+        #app {
+            padding: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div style="display: inline-block;">
+            <cw-input-select component-id="cw-input-select-1" v-bind:options="musicals"></cw-input-select>
+        </div>
+        <div style="display: inline-block;">
+            <cw-input-select component-id="cw-input-select-2" v-bind:options="books" label-name="name"></cw-input-select>
+        </div>
+        <div style="display: inline-block;">
+            <cw-input-select component-id="cw-input-select-3" v-bind:options="plants" label-name="ename"></cw-input-select>
+        </div>
+    </div>
+
+    <script>
+        new Vue({
+            el: '#app',
+            data () {
+                return {
+                    musicals: MUSICALS, // 乐器
+                    books: BOOKS, // 书
+                    plants: PLANTS, // 植物
+                }
+            },
+        })
+    </script>
+</body>
+</html>
