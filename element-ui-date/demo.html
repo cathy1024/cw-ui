@@ -59,8 +59,8 @@
                                     start.setDate(oDate.getDate());
                                     end.setDate(oDate.getDate() + 6);
                                 } else {
-                                    start.setTime(oDate.getTime() - 3600 * 1000 * 24 * day);
-                                    end.setTime(oDate.getTime() + 3600 * 1000 * 24 * (6 - day));
+                                    start.setTime(oDate.getTime() - 3600 * 1000 * 24 * (day - 1));
+                                    end.setTime(oDate.getTime() + 3600 * 1000 * 24 * (7 - day));
                                 }
 
                                 picker.$emit('pick', [start, end]);
@@ -73,7 +73,7 @@
                                 var thisDay = start.getDay();
                                 var thisDate = start.getDate();
                                 if (thisDay != 0) {
-                                    start.setDate(thisDate - thisDay);
+                                    start.setDate(thisDate - thisDay + 1);
                                 }
                                 picker.$emit('pick', [start, end]);
                             }
